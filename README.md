@@ -4,5 +4,3 @@
 - ng serve
 - clonar o repositorio em outra pasta https://github.com/afborda/Api-Node-advanced
 - Seguir as instruçoes do repositório Api-Node-advanced
-
-**O que esta sendo usado nesta API**
