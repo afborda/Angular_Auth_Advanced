@@ -10,6 +10,9 @@ import { Person } from '../person';
 })
 export class PeopleComponent implements OnInit {
   people$: Observable<Person[]>;
+
+  loading: boolean = false;
+
   constructor(private mainService: MainService) {}
 
   ngOnInit(): void {

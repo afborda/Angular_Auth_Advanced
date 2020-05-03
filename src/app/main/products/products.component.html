@@ -1,11 +1,12 @@
 <h3>Products</h3>
 
 <div *ngIf="(products$ | async)?.length > 0; else noproduct">
-  <ul>
-    <li *ngFor="let p of products$ | async">{{ p.name }} - {{ p.price }}</li>
+  <ul *ngFor="let p of products$ | async">
+    <li>Produto: {{ p.name }}</li>
+    <li>Valor do Produto: R${{ p.price }} ,00</li>
   </ul>
 </div>
 
 <ng-template #noproduct>
-  <h1>Não tem produto!!</h1>
+  <h1>Carregando Produtos...</h1>
 </ng-template>

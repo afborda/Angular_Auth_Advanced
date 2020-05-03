@@ -1,11 +1,12 @@
-<h3>People</h3>
+<h3></h3>
 
 <div *ngIf="(people$ | async)?.length > 0; else noperson">
-  <ul>
-    <li *ngFor="let p of people$ | async">{{ p.name }} - {{ p.email }}</li>
+  <ul *ngFor="let p of people$ | async">
+    <li>Nome: {{ p.name }}</li>
+    <li>Contato: {{ p.email }}</li>
   </ul>
 </div>
 
 <ng-template #noperson>
-  <h1>Não tem Ninguem ABIGO!!</h1>
+  <h1>Carregando!!</h1>
 </ng-template>
