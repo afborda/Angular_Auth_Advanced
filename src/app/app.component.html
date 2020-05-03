@@ -1,0 +1,45 @@
+<mat-toolbar>
+  Help Desk
+  <span fxFlex></span>
+
+  <ng-container *ngIf="!(autheticated$ | async)">
+    <button mat-button routerLink="/auth/login">
+      <mat-icon>input</mat-icon>
+      &nbsp;Logar
+    </button>
+    <button mat-button routerLink="/auth/register">
+      <mat-icon>person_add</mat-icon>
+      &nbsp;Registrar
+    </button>
+  </ng-container>
+
+  <ng-container *ngIf="(autheticated$ | async) && (user$ | async)">
+    <button mat-icon-button routerLink="/main/people">
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button routerLink="/main/products">
+      <mat-icon>shop</mat-icon>
+    </button>
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <p class="username">{{ (user$ | async)?.email }}</p>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Sair</span>
+      </button>
+    </mat-menu>
+  </ng-container>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
