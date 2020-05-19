@@ -1,0 +1,17 @@
+<h3>Lista de chamados</h3>
+
+<div *ngIf="(callService$ | async)?.length > 0; else nocallservice">
+  <ul *ngFor="let s of callService$ | async">
+    <li>
+      <h4>{{ s.title }}</h4>
+      <p>{{ s.description }}</p>
+      <p>{{ s.status }}</p>
+      <p>{{ s.user }}</p>
+      <p>{{ s.technical }}</p>
+    </li>
+  </ul>
+</div>
+
+<ng-template #nocallservice>
+  <h1>Carregando Chamados...</h1>
+</ng-template>

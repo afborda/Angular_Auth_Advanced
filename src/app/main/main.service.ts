@@ -1,3 +1,4 @@
+import { CallService } from './callService';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -23,6 +24,14 @@ export class MainService {
 
   getProduct(): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.url}/products`).pipe(
+      catchError((e) => {
+        return throwError(e);
+      })
+    );
+  }
+
+  getCallServices(): Observable<CallService[]> {
+    return this.http.get<CallService[]>(`${this.url}/callservice`).pipe(
       catchError((e) => {
         return throwError(e);
       })
