@@ -1,3 +1,4 @@
+import { MaterialModule } from './../material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,12 +7,8 @@ import { PeopleComponent } from './people/people.component';
 import { ProductsComponent } from './products/products.component';
 import { ServiceCallComponent } from './service-call/service-call.component';
 
-
 @NgModule({
   declarations: [PeopleComponent, ProductsComponent, ServiceCallComponent],
-  imports: [
-    CommonModule,
-    MainRoutingModule
-  ]
+  imports: [CommonModule, MainRoutingModule, MaterialModule],
 })
-export class MainModule { }
+export class MainModule {}

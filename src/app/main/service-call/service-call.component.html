@@ -1,15 +1,23 @@
-<h3>Lista de chamados</h3>
+<h3 class="titulo-pagina">Lista de chamados</h3>
 
 <div *ngIf="(callService$ | async)?.length > 0; else nocallservice">
-  <ul *ngFor="let s of callService$ | async">
-    <li>
-      <h4>{{ s.title }}</h4>
-      <p>{{ s.description }}</p>
-      <p>{{ s.status }}</p>
-      <p>{{ s.user }}</p>
-      <p>{{ s.technical }}</p>
-    </li>
-  </ul>
+  <div class="alinha-tudo borda-Top">
+    <div>Tipo</div>
+    <div>Descrição</div>
+    <div>Status</div>
+    <div>Usuario</div>
+    <div>Tecnico</div>
+  </div>
+  <div
+    class="alinha-tudo bordinha borda-Top"
+    *ngFor="let s of callService$ | async"
+  >
+    <p class="title">{{ s.title }}</p>
+    <p>{{ s.description }}</p>
+    <p class="status-color">{{ s.status }}</p>
+    <p>{{ s.user }}</p>
+    <p>{{ s.technical }}</p>
+  </div>
 </div>
 
 <ng-template #nocallservice>
