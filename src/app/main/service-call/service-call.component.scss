@@ -1,36 +1,24 @@
-.alinha-tudo {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100px;
-  border-radius: 8px;
-  margin: 30px;
+.pure-table {
+  width: 100%;
+}
+.header-table th {
+  padding: 15px;
+  background-color: #ccc;
 }
 
-.alinha-tudo div {
-  font-weight: bold;
-  font-size: 20px;
+.center-text {
+  text-align: center;
+  height: 76px;
+  background-color: whitesmoke;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .titulo-pagina {
   text-align: center;
-  font-weight: bold;
-  font-size: 30px;
   padding: 50px;
-}
-
-.borda-Top {
-  box-shadow: 3px 10px 48px -30px rgba(0, 0, 0, 0.75);
-}
-
-.status-color {
-  padding: 15px;
-  background-color: seagreen;
-  border-radius: 8px;
-  color: #fff;
-}
-
-.title {
+  font-size: 30px;
   font-weight: bold;
-  font-size: 18px;
 }

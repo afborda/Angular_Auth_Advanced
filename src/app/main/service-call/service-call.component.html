@@ -1,24 +1,53 @@
 <h3 class="titulo-pagina">Lista de chamados</h3>
 
+<table
+  *ngIf="(callService$ | async)?.length > 0; else nocallservice"
+  class="pure-table"
+>
+  <thead>
+    <tr class="header-table">
+      <th>ID</th>
+      <th>Descrição</th>
+      <th>Tipo</th>
+      <th>Usuario</th>
+      <th>Status</th>
+      <th>Tecnico Responsavel</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="center-text" *ngFor="let s of callService$ | async">
+      <td>{{ s._id }}</td>
+      <td>{{ s.title }}</td>
+      <td>{{ s.technical }}</td>
+      <td>{{ s.user }}</td>
+      <td>{{ s.status }}</td>
+      <td>{{ s.description }}</td>
+      <td>
+        <p>Detalhes</p>
+        <a routerLink="/main/products"><mat-icon>remove_red_eye</mat-icon></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- 
 <div *ngIf="(callService$ | async)?.length > 0; else nocallservice">
-  <div class="alinha-tudo borda-Top">
-    <div>Tipo</div>
-    <div>Descrição</div>
-    <div>Status</div>
-    <div>Usuario</div>
-    <div>Tecnico</div>
-  </div>
-  <div
-    class="alinha-tudo bordinha borda-Top"
-    *ngFor="let s of callService$ | async"
-  >
-    <p class="title">{{ s.title }}</p>
-    <p>{{ s.description }}</p>
-    <p class="status-color">{{ s.status }}</p>
-    <p>{{ s.user }}</p>
-    <p>{{ s.technical }}</p>
-  </div>
-</div>
+  <ul class="alinha-tudo borda-Top">
+    <li>Tipo</li>
+    <li>Descrição</li>
+    <li>Status</li>
+    <li>Usuario</li>
+    <li>Tecnico</li>
+  </ul>
+  <ul class="alinha-tudo borda-Top" *ngFor="let s of callService$ | async">
+    <li class="title" >{{ s.title }}</li>
+    <li>{{ s.description }}</li>
+    <li class="status-color">{{ s.status }}</li>
+    <li>{{ s.user }}</li>
+    <li>{{ s.technical }}</li>
+  </ul>
+</div> -->
 
 <ng-template #nocallservice>
   <h1>Carregando Chamados...</h1>
