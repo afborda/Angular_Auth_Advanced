@@ -1,7 +1,16 @@
 export interface CallService {
   _id?: string;
   status: string;
-  user: string;
+  user: {
+    address: string;
+    city: string;
+    email: string;
+    firstname: string;
+    lastname: string;
+    mobilephone: string;
+    phone: string;
+    state: string;
+  };
   technical: string;
   name: String;
   surname: String;

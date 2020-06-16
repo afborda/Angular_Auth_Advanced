@@ -10,10 +10,16 @@ import { MainService } from '../main.service';
 })
 export class ServiceCallComponent implements OnInit {
   callService$: Observable<CallService[]>;
+  value: any;
 
   constructor(private mainService: MainService) {}
 
   ngOnInit(): void {
     this.callService$ = this.mainService.getCallServices();
+
+    this.mainService.getCallServices().subscribe((e) => {
+      this.value = e;
+      console.log(e);
+    });
   }
 }

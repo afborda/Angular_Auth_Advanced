@@ -10,6 +10,7 @@ import { Product } from '../product';
 })
 export class ProductsComponent implements OnInit {
   products$: Observable<Product[]>;
+
   constructor(private mainService: MainService) {}
 
   ngOnInit(): void {

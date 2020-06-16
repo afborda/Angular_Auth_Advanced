@@ -21,11 +21,11 @@
     <tr class="center-text" *ngFor="let s of callService$ | async">
       <td>{{ s._id }}</td>
       <td>{{ s.status }}</td>
-      <td>{{ s.name }}</td>
-      <td>{{ s.surname }}</td>
       <td>{{ s.title }}</td>
+      <td>{{ s.area }}</td>
+      <td>{{ s.type }}</td>
       <td>{{ s.priority }}</td>
-      <td>{{ s.nregistration }}</td>
+      <td>{{ s.user.firstname }}</td>
       <td>{{ s.description }}</td>
       <td>
         <p>Detalhes</p>
@@ -36,5 +36,12 @@
 </table>
 
 <ng-template #nocallservice>
-  <h1>Carregando Chamados...</h1>
+  <div class="ui segment">
+    <div class="ui active inverted dimmer">
+      <div class="ui large text loader">Loading</div>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
 </ng-template>

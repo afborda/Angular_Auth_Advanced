@@ -60,8 +60,10 @@ export class PeopleComponent implements OnInit {
     this.mainService.registerCall(call).subscribe(
       (u) => {
         this.snackBar.open('Successfuly Register.', 'OK', { duration: 2000 });
+        this.onForm();
         this.router.navigateByUrl('/');
       },
+
       (err) => {
         this.snackBar.open(err.error.message, 'OK', { duration: 2000 });
       }
