@@ -1,3 +1,4 @@
+import { FormBuilder } from '@angular/forms';
 import { CallService } from './callService';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -31,10 +32,22 @@ export class MainService {
   }
 
   getCallServices(): Observable<CallService[]> {
-    return this.http.get<CallService[]>(`${this.url}/callservice`).pipe(
+    return this.http.get<CallService[]>(`${this.url}/help-desk`).pipe(
       catchError((e) => {
         return throwError(e);
       })
     );
+  }
+
+  getCallDetails(): Observable<any> {
+    return this.http.get<any>(`${this.url}/help-desk/show`).pipe(
+      catchError((e) => {
+        return throwError(e);
+      })
+    );
+  }
+
+  registerCall(call: CallService): Observable<CallService> {
+    return this.http.post<CallService>(`${this.url}/help-desk`, call);
   }
 }

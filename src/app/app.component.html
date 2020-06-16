@@ -17,15 +17,10 @@
     <button mat-icon-button routerLink="/main/people">
       <mat-icon>home</mat-icon>
     </button>
-    <!-- <button mat-icon-button routerLink="/main/products">
-      <mat-icon>shop</mat-icon>
-    </button> -->
+
     <button mat-icon-button routerLink="/main/service">
       <mat-icon>report_problem</mat-icon>
     </button>
-    <!-- <button mat-icon-button (click)="logout()">
-      <mat-icon>exit_to_app</mat-icon>
-    </button> -->
 
     <button
       mat-icon-button
@@ -36,6 +31,10 @@
     </button>
     <mat-menu #menu="matMenu">
       <p class="username">{{ (user$ | async)?.email }}</p>
+
+      <p class="username" *ngIf="(user$ | async)?.isadmin">Administrador</p>
+      <p class="username" *ngIf="!(user$ | async)?.isadmin">User</p>
+
       <mat-divider></mat-divider>
       <button mat-menu-item (click)="logout()">
         <mat-icon>exit_to_app</mat-icon>
