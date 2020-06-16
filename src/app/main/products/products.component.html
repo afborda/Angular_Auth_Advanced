@@ -1,4 +1,29 @@
-<h3>Products</h3>
+<h3>Detalhes do chamado</h3>
+
+<div class="ui three column divided grid">
+  <div class="row">
+    <div class="column">
+      <p>heuheue</p>
+    </div>
+    <div class="column">
+      <p>heuheuhuehue</p>
+    </div>
+    <div class="column">
+      <p>sjsjsskjsojkos</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <p>sjkposdjkfposd</p>
+    </div>
+    <div class="column">
+      <p>sdfsdfsdfsdfsd</p>
+    </div>
+    <div class="column">
+      <p>sdfsdfsdfsdf</p>
+    </div>
+  </div>
+</div>
 
 <div *ngIf="(products$ | async)?.length > 0; else noproduct">
   <ul *ngFor="let p of products$ | async">

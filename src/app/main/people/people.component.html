@@ -40,15 +40,13 @@
       <div class="field">
         <label>Area</label>
         <select formControlName="area" class="ui fluid dropdown">
-          <option *ngFor="let d of area" [value]="d.id">{{ d.text }}</option>
+          <option *ngFor="let d of area" [value]="d">{{ d }}</option>
         </select>
       </div>
       <div class="two field">
         <label>Prioridades</label>
         <select formControlName="priority" class="ui fluid dropdown">
-          <option *ngFor="let d of prioridade" [value]="d.id">{{
-            d.text
-          }}</option>
+          <option *ngFor="let d of prioridade" [value]="d">{{ d }}</option>
         </select>
       </div>
     </div>
@@ -78,7 +76,7 @@
       <textarea formControlName="nregistration"></textarea>
     </div>
 
-    <button class="ui button">
+    <button class="ui green button">
       Abrir Chamado
     </button>
   </form>
